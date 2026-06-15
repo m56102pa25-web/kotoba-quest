@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ことばクエスト</title>
+    <meta name="theme-color" content="#17355a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="ことば" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./icons/icon-180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="desktop-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="app-icon">KQ</span>
+          <div>
+            <strong>ことばクエスト</strong>
+            <small>Business and AI</small>
+          </div>
+        </div>
+        <nav class="tabs" aria-label="学習モード">
+          <button class="tab active" data-view="cards" aria-label="カード"><span class="tab-icon" aria-hidden="true">C</span><span>カード</span></button>
+          <button class="tab" data-view="quiz" aria-label="クイズ"><span class="tab-icon" aria-hidden="true">Q</span><span>クイズ</span></button>
+          <button class="tab" data-view="review" aria-label="復習"><span class="tab-icon" aria-hidden="true">R</span><span>復習</span></button>
+          <button class="tab" data-view="dictionary" aria-label="用語一覧"><span class="tab-icon" aria-hidden="true">D</span><span>用語一覧</span></button>
+        </nav>
+        <div class="add-menu">
+          <button id="openAddMenu" class="sidebar-refresh" aria-expanded="false">用語を増やす</button>
+          <div id="addMenuPanel" class="add-menu-panel" hidden>
+            <button data-add-action="web">Webから探す</button>
+            <button data-add-action="pdf">PDFから作る</button>
+            <button data-add-action="youtube">YouTubeから作る</button>
+            <button data-add-action="auto">自動で追加</button>
+          </div>
+        </div>
+        <div class="sidebar-footer">
+          <span class="mini-label">今日の気分</span>
+          <strong id="dailyMood">まず3問だけ</strong>
+          <span id="streakText">連続正解 0</span>
+        </div>
+      </aside>
+
+      <main class="app">
+        <header class="titlebar">
+          <div>
+            <p class="eyebrow">Learning workspace</p>
+            <h1>用語を、ちょっとずつ自分の言葉にする</h1>
+          </div>
+          <div class="title-stats" aria-label="学習サマリー">
+            <div><span>Cards</span><strong id="headerTotal">0</strong></div>
+            <div><span>Known</span><strong id="headerKnown">0</strong></div>
+            <div><span>Review</span><strong id="headerReview">0</strong></div>
+          </div>
+          <label class="search">
+            <span>検索</span>
+            <input id="searchInput" type="search" placeholder="例: ROI、生成AI、アジャイル" />
+          </label>
+        </header>
+
+        <section class="controls">
+          <div class="segment" role="group" aria-label="カテゴリ">
+            <button class="chip active" data-category="all">全部</button>
+            <button class="chip" data-category="business">ビジネス</button>
+            <button class="chip" data-category="ai">AI</button>
+            <button class="chip" data-category="shortcut">ショートカット</button>
+          </div>
+          <div class="web-tools">
+            <button class="secondary" data-add-action="web">Web更新</button>
+            <span id="webStatus" class="desktop-hint">学習データはこのアプリに保存されます</span>
+          </div>
+        </section>
+
+        <section id="cardsView" class="view active">
+          <div class="study-layout">
+            <article class="term-card">
+              <div class="term-topline">
+                <span id="cardCategory" class="badge">Business</span>
+                <span class="card-position" id="cardPosition">1 / 1</span>
+                <span id="cardLevel" class="level">はじめて</span>
+              </div>
+              <h2 id="cardTerm">ロード中</h2>
+              <p id="cardSimple" class="simple"></p>
+              <div class="example-box">
+                <span>たとえば</span>
+                <p id="cardExample"></p>
+              </div>
+              <div class="memory-box">
+                <span>覚え方</span>
+                <p id="cardMemory"></p>
+              </div>
+              <div class="actions">
+                <button id="prevCard" class="icon-button" aria-label="前のカード">‹</button>
+                <button id="markKnown" class="primary">わかった</button>
+                <button id="markReview" class="secondary">あとで復習</button>
+                <button id="nextCard" class="icon-button" aria-label="次のカード">›</button>
+              </div>
+            </article>
+            <aside class="progress-panel">
+              <h2>今の進み具合</h2>
+              <div class="meter">
+                <div id="knownMeter"></div>
+              </div>
+              <p id="progressText">0語を覚えました</p>
+              <div class="tiny-grid">
+                <div><strong id="knownCount">0</strong><span>覚えた</span></div>
+                <div><strong id="reviewCount">0</strong><span>復習</span></div>
+                <div><strong id="totalCount">0</strong><span>全部</span></div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="quizView" class="view">
+          <article class="quiz-panel">
+            <div class="quiz-head">
+              <span id="quizCategory" class="badge">Quiz</span>
+              <span id="quizScore">0 / 0</span>
+            </div>
+            <h2 id="quizQuestion">この意味の用語は？</h2>
+            <p id="quizPrompt"></p>
+            <div id="answerList" class="answers"></div>
+            <p id="quizFeedback" class="feedback" aria-live="polite"></p>
+            <button id="nextQuiz" class="primary">次の問題</button>
+          </article>
+        </section>
+
+        <section id="reviewView" class="view">
+          <div class="list-head">
+            <h2>復習ボックス</h2>
+            <button id="clearReview" class="secondary">復習を空にする</button>
+          </div>
+          <div id="reviewList" class="term-list"></div>
+        </section>
+
+        <section id="dictionaryView" class="view">
+          <div class="list-head">
+            <h2>用語一覧</h2>
+            <span id="listCount"></span>
+          </div>
+          <div id="termList" class="term-list"></div>
+        </section>
+      </main>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

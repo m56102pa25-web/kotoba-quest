@@ -1,0 +1,40 @@
+{
+  "name": "kotoba-quest",
+  "version": "0.1.0",
+  "description": "ビジネス用語とAI用語を楽しく覚えるデスクトップ学習アプリ",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac"
+  },
+  "build": {
+    "appId": "local.kotoba.quest",
+    "productName": "Kotoba Quest",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "styles.css",
+      "app.js",
+      "main.js",
+      "pdf-terms.js",
+      "preload.js",
+      "web-updater.js",
+      "manifest.json",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.education",
+      "identity": "-"
+    }
+  },
+  "devDependencies": {
+    "electron": "^42.0.1",
+    "electron-builder": "^26.8.1"
+  }
+}

@@ -36,6 +36,8 @@
             <button data-add-action="pdf">PDFから作る</button>
             <button data-add-action="youtube">YouTubeから作る</button>
             <button data-add-action="auto">自動で追加</button>
+            <button data-add-action="custom">自分で追加</button>
+            <span id="addStatus" class="add-status">iPhone内に保存されます</span>
           </div>
         </div>
         <div class="sidebar-footer">
@@ -146,6 +148,44 @@
         </section>
       </main>
     </div>
+
+    <section id="customTermSheet" class="sheet" hidden aria-label="用語を追加">
+      <div class="sheet-backdrop" data-close-sheet></div>
+      <form id="customTermForm" class="sheet-panel">
+        <div class="sheet-head">
+          <div>
+            <p class="eyebrow">Add term</p>
+            <h2>自分の言葉を追加</h2>
+          </div>
+          <button type="button" class="icon-button" data-close-sheet aria-label="閉じる">×</button>
+        </div>
+        <label>
+          <span>用語</span>
+          <input id="customTermName" name="term" required maxlength="40" placeholder="例: リテンション" />
+        </label>
+        <label>
+          <span>カテゴリ</span>
+          <select id="customTermCategory" name="category">
+            <option value="business">ビジネス</option>
+            <option value="ai">AI</option>
+            <option value="shortcut">ショートカット</option>
+          </select>
+        </label>
+        <label>
+          <span>かんたんな説明</span>
+          <textarea id="customTermSimple" name="simple" required maxlength="120" rows="3" placeholder="自分があとで見てわかる説明"></textarea>
+        </label>
+        <label>
+          <span>たとえば</span>
+          <textarea id="customTermExample" name="example" maxlength="160" rows="3" placeholder="使う場面や例文"></textarea>
+        </label>
+        <label>
+          <span>覚え方</span>
+          <textarea id="customTermMemory" name="memory" maxlength="160" rows="3" placeholder="語呂やイメージ"></textarea>
+        </label>
+        <button class="primary" type="submit">追加する</button>
+      </form>
+    </section>
     <script src="./app.js"></script>
   </body>
 </html>

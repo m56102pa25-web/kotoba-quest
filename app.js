@@ -448,6 +448,238 @@ const autoTermPack = [
     simple: "再生ヘッド位置でクリップを分割するショートカット。",
     example: "タイムライン上の今の位置でクリップを切りたい時に使います。",
     memory: "Commandを足したBは、その場でカットです。"
+  },
+  {
+    term: "リテンション",
+    category: "business",
+    level: "実務",
+    simple: "お客様がサービスを使い続けているかを見る考え方。",
+    example: "アプリを入れた人が翌月も使っていれば、リテンションが高いと言えます。",
+    memory: "retain は保つ。お客様との関係を保てているかを見る言葉です。"
+  },
+  {
+    term: "アクティブユーザー",
+    category: "business",
+    level: "よく出る",
+    simple: "一定期間内に実際にサービスを使った利用者。",
+    example: "今月ログインした人の数を月間アクティブユーザーとして見ます。",
+    memory: "登録者ではなく、動いているユーザーです。"
+  },
+  {
+    term: "コンバージョン",
+    category: "business",
+    level: "よく出る",
+    simple: "見てくれた人が、申し込みや購入など目的の行動をすること。",
+    example: "広告を見た人が予約したら、それがコンバージョンです。",
+    memory: "見る人からお客様へ変わる瞬間、と覚えます。"
+  },
+  {
+    term: "CVR",
+    category: "business",
+    level: "実務",
+    simple: "見た人のうち、どれくらいが目的の行動をしたかの割合。",
+    example: "100人がページを見て5人が購入したら、CVRは5%です。",
+    memory: "Conversion Rate。ゴールまで進んだ割合です。"
+  },
+  {
+    term: "ファネル",
+    category: "business",
+    level: "実務",
+    simple: "認知から購入まで、人がだんだん絞られていく流れ。",
+    example: "広告を見る、ページを見る、申し込む、購入する、という段階で見ます。",
+    memory: "じょうごの形。入口は広く、最後は細くなります。"
+  },
+  {
+    term: "インサイト",
+    category: "business",
+    level: "実務",
+    simple: "データや声から見えてくる、行動につながる気づき。",
+    example: "売れない理由が価格ではなく不安だった、とわかるのがインサイトです。",
+    memory: "ただの感想ではなく、次の手が見える発見です。"
+  },
+  {
+    term: "ロードマップ",
+    category: "business",
+    level: "基本",
+    simple: "これから何をどの順番で進めるかをまとめた予定表。",
+    example: "今月は予約機能、来月は決済機能、という開発予定をロードマップにします。",
+    memory: "目的地までの道順を描く地図です。"
+  },
+  {
+    term: "MVP",
+    category: "business",
+    level: "実務",
+    simple: "最初に試すための、最低限の機能を持った製品。",
+    example: "まず予約だけできる小さなアプリを出して反応を見るのがMVPです。",
+    memory: "Minimum Viable Product。小さく出して学ぶための形です。"
+  },
+  {
+    term: "ユーザビリティ",
+    category: "business",
+    level: "基本",
+    simple: "利用者にとって使いやすいかどうか。",
+    example: "ボタンが見つけやすく、迷わず予約できる画面はユーザビリティが高いです。",
+    memory: "便利さより一歩手前の、使う時のわかりやすさです。"
+  },
+  {
+    term: "アクセシビリティ",
+    category: "business",
+    level: "基本",
+    simple: "できるだけ多くの人が使えるようにする考え方。",
+    example: "文字を読みやすくし、音声読み上げでも操作できるようにします。",
+    memory: "access は近づけること。誰でも近づける設計です。"
+  },
+  {
+    term: "オンプレミス",
+    category: "business",
+    level: "IT",
+    simple: "会社や自分の管理する場所にサーバーを置いて使う方式。",
+    example: "クラウドではなく社内サーバーでシステムを動かす場合です。",
+    memory: "premises は敷地。自分の場所で持つイメージです。"
+  },
+  {
+    term: "API",
+    category: "business",
+    level: "IT",
+    simple: "アプリ同士が情報をやり取りするための窓口。",
+    example: "予約アプリと決済サービスをつなぐ時にAPIを使います。",
+    memory: "アプリ同士の受付カウンターです。"
+  },
+  {
+    term: "JSON",
+    category: "business",
+    level: "IT",
+    simple: "データをやり取りしやすい形で書く形式。",
+    example: "名前や金額などを、アプリが読みやすい決まった形で渡します。",
+    memory: "人にも機械にも読ませるデータのメモ形式です。"
+  },
+  {
+    term: "ノーコード",
+    category: "business",
+    level: "よく出る",
+    simple: "コードを書かずにアプリや業務ツールを作る方法。",
+    example: "フォームや予約ページを、画面操作だけで作るツールがあります。",
+    memory: "プログラムを書かず、部品を組み合わせて作る感じです。"
+  },
+  {
+    term: "ローコード",
+    category: "business",
+    level: "実務",
+    simple: "少ないコードと画面操作を組み合わせて作る方法。",
+    example: "基本は画面で作り、細かい部分だけコードで調整します。",
+    memory: "ゼロではないけど少ないコードです。"
+  },
+  {
+    term: "SLA",
+    category: "business",
+    level: "契約",
+    simple: "サービスの品質や稼働率についての約束。",
+    example: "月間99.9%稼働します、という約束をSLAに書きます。",
+    memory: "Service Level Agreement。サービス品質の約束です。"
+  },
+  {
+    term: "SLO",
+    category: "business",
+    level: "運用",
+    simple: "サービス品質について、チームが目標にする数値。",
+    example: "問い合わせへの初回返信を24時間以内にする、などです。",
+    memory: "Objective は目標。守りたい水準です。"
+  },
+  {
+    term: "ガードレール",
+    category: "ai",
+    level: "注意",
+    simple: "AIが危ない答えや望まない動きをしないようにする制限。",
+    example: "個人情報を出さない、確信がない時は確認を促す、などのルールです。",
+    memory: "道路のガードレールのように、外れすぎないための柵です。"
+  },
+  {
+    term: "システムプロンプト",
+    category: "ai",
+    level: "実務",
+    simple: "AIの役割や守るべきルールを先に決める指示。",
+    example: "あなたは丁寧な先生です、専門外は断ってください、などを書きます。",
+    memory: "AIの性格と仕事の説明書です。"
+  },
+  {
+    term: "Few-shot",
+    category: "ai",
+    level: "応用",
+    simple: "いくつか例を見せてから、AIに同じ形で答えてもらう方法。",
+    example: "良い返信例を3つ見せてから、新しい返信文を作らせます。",
+    memory: "few は少し。少しの例で型を伝えます。"
+  },
+  {
+    term: "Zero-shot",
+    category: "ai",
+    level: "応用",
+    simple: "例を見せずに、指示だけでAIに答えてもらう方法。",
+    example: "この文章を要約して、とだけ頼む使い方です。",
+    memory: "zero は例なし。ぶっつけ本番で頼む感じです。"
+  },
+  {
+    term: "評価データ",
+    category: "ai",
+    level: "実務",
+    simple: "AIの答えが良いか悪いかを確かめるための問題集。",
+    example: "よくある質問100件に正しく答えられるかを評価します。",
+    memory: "AI用のテスト問題です。"
+  },
+  {
+    term: "ベンチマーク",
+    category: "ai",
+    level: "よく出る",
+    simple: "AIやシステムの性能を比べるための共通テスト。",
+    example: "文章理解や計算のテストでモデル同士を比較します。",
+    memory: "同じものさしで比べるための基準です。"
+  },
+  {
+    term: "レイテンシ",
+    category: "business",
+    level: "IT",
+    simple: "操作してから反応が返るまでの待ち時間。",
+    example: "ボタンを押して結果が出るまでが遅い時、レイテンシが高いと言います。",
+    memory: "待たされる時間です。短いほど気持ちよく使えます。"
+  },
+  {
+    term: "キャッシュ",
+    category: "business",
+    level: "IT",
+    simple: "よく使うデータを一時的に保存して、次に速く出す仕組み。",
+    example: "一度開いたページが次から速く表示されるのはキャッシュのおかげです。",
+    memory: "近くに置いておく予備のメモです。"
+  },
+  {
+    term: "Command + L",
+    category: "shortcut",
+    level: "Mac基本",
+    simple: "ブラウザのアドレス欄をすぐ選択するショートカット。",
+    example: "新しいURLを入力したい時、Command + Lでアドレス欄に移動します。",
+    memory: "LはLocation。場所を指定する欄へ移動します。"
+  },
+  {
+    term: "Command + R",
+    category: "shortcut",
+    level: "Mac基本",
+    simple: "ページや画面を再読み込みするショートカット。",
+    example: "Webページの表示がおかしい時、Command + Rで更新します。",
+    memory: "RはReload。もう一度読み込みます。"
+  },
+  {
+    term: "Command + Option + I",
+    category: "shortcut",
+    level: "ブラウザ",
+    simple: "ブラウザの開発者ツールを開くショートカット。",
+    example: "WebページのHTMLやエラーを確認したい時に使います。",
+    memory: "IはInspect。中身を調べる入口です。"
+  },
+  {
+    term: "Command + Shift + T",
+    category: "shortcut",
+    level: "ブラウザ",
+    simple: "閉じたタブをもう一度開くショートカット。",
+    example: "間違って閉じたページを戻したい時に使います。",
+    memory: "TにShiftを足すと、閉じたタブを復活させます。"
   }
 ];
 
@@ -565,11 +797,14 @@ function renderList(containerId, list) {
   list.forEach((item) => {
     const card = document.createElement("article");
     card.className = "term-item";
-    card.innerHTML = `
-      <span class="badge">${categoryLabel(item.category)}</span>
-      <h3>${item.term}</h3>
-      <p>${item.simple}</p>
-    `;
+    const badge = document.createElement("span");
+    badge.className = "badge";
+    badge.textContent = categoryLabel(item.category);
+    const title = document.createElement("h3");
+    title.textContent = item.term;
+    const description = document.createElement("p");
+    description.textContent = item.simple;
+    card.append(badge, title, description);
     container.append(card);
   });
 }
@@ -653,8 +888,15 @@ function renderAll() {
 
 function setWebStatus(message, tone = "normal") {
   const status = $("#webStatus");
-  status.textContent = message;
-  status.dataset.tone = tone;
+  if (status) {
+    status.textContent = message;
+    status.dataset.tone = tone;
+  }
+  const addStatus = $("#addStatus");
+  if (addStatus) {
+    addStatus.textContent = message;
+    addStatus.dataset.tone = tone;
+  }
 }
 
 function configurePwaMode() {
@@ -667,8 +909,7 @@ function configurePwaMode() {
   document.body.classList.toggle("standalone-mode", isStandalone);
 
   if (!isElectron) {
-    closeAddMenu();
-    setWebStatus("iPhone版では追加機能は準備中です", "normal");
+    setWebStatus("iPhone内に用語を追加できます", "normal");
   }
 }
 
@@ -791,11 +1032,59 @@ function addYoutubeSeed() {
 
 function addAutoTerms() {
   const added = mergeTerms(autoTermPack);
-  state.category = "shortcut";
+  state.category = "all";
   state.cardIndex = Math.max(0, filteredTerms().length - added.length);
-  $$(".chip").forEach((chip) => chip.classList.toggle("active", chip.dataset.category === "shortcut"));
+  $$(".chip").forEach((chip) => chip.classList.toggle("active", chip.dataset.category === "all"));
   renderAll();
-  setWebStatus(`${added.length}個のショートカットを追加しました`, "success");
+  setWebStatus(`${added.length}語を追加しました`, "success");
+}
+
+function openCustomTermSheet() {
+  closeAddMenu();
+  const sheet = $("#customTermSheet");
+  sheet.hidden = false;
+  document.body.classList.add("sheet-open");
+  $("#customTermName").focus();
+}
+
+function closeCustomTermSheet() {
+  const sheet = $("#customTermSheet");
+  sheet.hidden = true;
+  document.body.classList.remove("sheet-open");
+}
+
+function normalizeCustomTerm(formData) {
+  const term = formData.get("term").trim();
+  const category = formData.get("category") || "business";
+  const simple = formData.get("simple").trim();
+  const example = formData.get("example").trim() || `${term} を使う場面をあとで追記します。`;
+  const memory = formData.get("memory").trim() || "自分の仕事や生活で使う場面とセットで覚えます。";
+
+  return {
+    term,
+    category,
+    level: "自分で追加",
+    simple,
+    example,
+    memory,
+    source: "custom"
+  };
+}
+
+function addCustomTerm(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const customTerm = normalizeCustomTerm(new FormData(form));
+  const added = mergeTerms([customTerm]);
+  state.category = customTerm.category;
+  state.query = "";
+  $("#searchInput").value = "";
+  state.cardIndex = Math.max(0, filteredTerms().findIndex((item) => item.term === customTerm.term));
+  $$(".chip").forEach((chip) => chip.classList.toggle("active", chip.dataset.category === customTerm.category));
+  renderAll();
+  closeCustomTermSheet();
+  form.reset();
+  setWebStatus(added.length ? "1語を追加しました" : "同じ用語を更新しました", "success");
 }
 
 function closeAddMenu() {
@@ -809,6 +1098,7 @@ function handleAddAction(action) {
   if (action === "pdf") choosePdfTerms();
   if (action === "youtube") addYoutubeSeed();
   if (action === "auto") addAutoTerms();
+  if (action === "custom") openCustomTermSheet();
 }
 
 $$(".tab").forEach((button) => {
@@ -893,9 +1183,21 @@ $$("[data-add-action]").forEach((button) => {
   button.addEventListener("click", () => handleAddAction(button.dataset.addAction));
 });
 
+$("#customTermForm").addEventListener("submit", addCustomTerm);
+
+$$("[data-close-sheet]").forEach((button) => {
+  button.addEventListener("click", closeCustomTermSheet);
+});
+
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".add-menu")) {
     closeAddMenu();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !$("#customTermSheet").hidden) {
+    closeCustomTermSheet();
   }
 });
 

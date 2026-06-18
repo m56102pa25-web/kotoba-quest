@@ -47,7 +47,9 @@ body {
 }
 
 button,
-input {
+input,
+select,
+textarea {
   font: inherit;
 }
 
@@ -56,7 +58,9 @@ button {
 }
 
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   outline: 3px solid rgba(40, 111, 159, 0.22);
   outline-offset: 2px;
 }
@@ -239,6 +243,23 @@ input:focus-visible {
 
 .add-menu-panel button:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+.add-status {
+  display: block;
+  padding: 5px 10px 2px;
+  color: #c5d6e7;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.add-status[data-tone="success"] {
+  color: #e8f2fb;
+}
+
+.add-status[data-tone="warn"] {
+  color: #ffd7ce;
 }
 
 .sidebar-footer {
@@ -428,9 +449,85 @@ h2 {
 }
 
 
-body.pwa-mode .add-menu,
 body.pwa-mode .web-tools {
   display: none;
+}
+
+body.pwa-mode [data-add-action="web"],
+body.pwa-mode [data-add-action="pdf"],
+body.pwa-mode [data-add-action="youtube"] {
+  display: none;
+}
+
+.sheet[hidden] {
+  display: none;
+}
+
+.sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  align-items: end;
+}
+
+.sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 27, 43, 0.38);
+  backdrop-filter: blur(7px);
+}
+
+.sheet-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  width: min(520px, calc(100vw - 28px));
+  max-height: calc(100dvh - 28px);
+  margin: 14px auto;
+  overflow: auto;
+  padding: 18px;
+  border: 1px solid rgba(200, 213, 228, 0.9);
+  border-radius: 8px;
+  background: #fbfcff;
+  box-shadow: 0 24px 70px rgba(13, 27, 43, 0.24);
+}
+
+.sheet-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sheet-head .icon-button {
+  width: 40px;
+  flex: 0 0 40px;
+}
+
+.sheet-panel label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.sheet-panel input,
+.sheet-panel select,
+.sheet-panel textarea {
+  width: 100%;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+  padding: 11px 12px;
+}
+
+.sheet-panel textarea {
+  resize: vertical;
+  line-height: 1.6;
 }
 
 .view {
